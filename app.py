@@ -16,7 +16,8 @@ table_name = 'bitcoin_price_storer'
 
 # REST API URL
 api_url = 'https://api.coinbase.com/v2/prices/btc-usd/spot'
-
+api_key-"721456789"
+api_key="Hello"
 # Create DynamoDB client
 dynamodb = boto3.client("dynamodb", region_name=region_name)
 
