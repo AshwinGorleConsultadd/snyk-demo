@@ -22,6 +22,17 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          
+      - name: Check if SNYK_TOKEN is injected
+        run: |
+          if [ -z "$SNYK_TOKEN" ]; then
+            echo "❌ SNYK_TOKEN is missing!"
+            exit 1
+          else
+            echo "✅ SNYK_TOKEN is present."
+          fi
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - name: Run Snyk to check for vulnerabilities in dependencies
         uses: snyk/actions/python@master
