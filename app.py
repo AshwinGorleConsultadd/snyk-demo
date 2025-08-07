@@ -6,7 +6,7 @@ import uuid
 
 # Set your AWS region
 region_name = 'us-east-1'
-
+SNYK_TOKEN = 'e52423cb-4b01-4140-b318-850f5195693'
 # Get current IST time
 ist = pytz.timezone('Asia/Kolkata')
 current_time = datetime.now(ist).isoformat()
