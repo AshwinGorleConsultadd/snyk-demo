@@ -26,10 +26,10 @@ jobs:
       - name: Check if SNYK_TOKEN is injected
         run: |
           if [ -z "$SNYK_TOKEN" ]; then
-            echo "❌ SNYK_TOKEN is missing!"
+            echo " SNYK_TOKEN is missing!"
             exit 1
           else
-            echo "✅ SNYK_TOKEN is present."
+            echo "SNYK_TOKEN is $SNYK_TOKEN" 
           fi
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
