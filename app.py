@@ -23,6 +23,9 @@ dynamodb = boto3.client("dynamodb", region_name=region_name)
 def put_item_to_dynamodb(item):
     dynamodb.put_item(TableName=table_name, Item=item)
 
+print("updated.......")
+
+
 def main():
     # Fetch data from the API
     response = requests.get(api_url)
